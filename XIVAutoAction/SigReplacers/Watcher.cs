@@ -106,8 +106,15 @@ namespace XIVAutoAttack.SigReplacers
             foreach (var item in Service.Configuration.Events)
             {
                 if (item.Name != action.Name) continue;
-                if (item.MacroIndex < 0 || item.MacroIndex > 99) break;
-
+                // 先判断是否开启
+                if (!item.IsEnable) break;
+                // 再判断命令是否为空，且开启了命令执行
+                if (item.macroString != ""&&!item.noCmd)
+                {
+                    XIVAutoAttackPlugin.XivCommon.Functions.Chat.SendMessage(item.macroString);
+                }
+                // 再执行宏
+                if (item.MacroIndex < 0 || item.MacroIndex > 99 ||item.noMacro) break;
                 MacroUpdater.Macros.Enqueue(new MacroItem(tar, item.IsShared ? RaptureMacroModule.Instance->Shared[item.MacroIndex] :
                     RaptureMacroModule.Instance->Individual[item.MacroIndex]));
             }

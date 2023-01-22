@@ -11,8 +11,8 @@
   </PropertyGroup>
   <PropertyGroup />
 	<PropertyGroup>
-		<DalamudLibPath>..\..\DalamudDep\</DalamudLibPath>
-		<OutputPath>..\..\DevPlugins\$(ProjectName)</OutputPath>
+		<DalamudLibPath>D:\dalam\addon\Hooks\dev\</DalamudLibPath>
+		<OutputPath>D:\Dalamud_plugins</OutputPath>
 	</PropertyGroup>
   <ItemGroup>
 	  <Reference Include="Dalamud">
@@ -43,6 +43,10 @@
 		  <HintPath>$(DalamudLibPath)Newtonsoft.Json.dll</HintPath>
 		  <Private>False</Private>
 	  </Reference>
+    <Reference Include="XivCommon">
+      <HintPath>XivCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 	
 <ItemGroup>

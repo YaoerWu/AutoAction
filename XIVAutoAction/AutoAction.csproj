@@ -11,8 +11,8 @@
   </PropertyGroup>
   <PropertyGroup />
 	<PropertyGroup>
-    <DalamudLibPath>$(AppData)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
-    <OutputPath>$(AppData)\XIVLauncher\devPlugins\$(ProjectName)</OutputPath>
+    <DalamudLibPath>D:\dalam\addon\Hooks\dev\</DalamudLibPath>
+    <OutputPath>D:\Dalamud_plugins</OutputPath>
 	</PropertyGroup>
   <ItemGroup>
 	  <Reference Include="Dalamud">

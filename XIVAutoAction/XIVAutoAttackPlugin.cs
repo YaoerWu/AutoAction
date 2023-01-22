@@ -10,6 +10,7 @@ using XIVAutoAttack.SigReplacers;
 using XIVAutoAttack.Updaters;
 using XIVAutoAttack.Windows;
 using XIVAutoAttack.Windows.ComboConfigWindow;
+using XivCommon;
 
 namespace XIVAutoAttack;
 
@@ -24,7 +25,7 @@ public sealed class XIVAutoAttackPlugin : IDalamudPlugin, IDisposable
     private static ComboConfigWindow _comboConfigWindow;
     internal static ScriptComboWindow _scriptComboWindow;
     public string Name => "AutoAction";
-
+    public static XivCommonBase XivCommon;
     public XIVAutoAttackPlugin(DalamudPluginInterface pluginInterface)
     {
         pluginInterface.Create<Service>();
@@ -33,7 +34,7 @@ public sealed class XIVAutoAttackPlugin : IDalamudPlugin, IDisposable
         Service.Address.Setup();
 
         Service.IconReplacer = new IconReplacer();
-
+        XivCommon = new XivCommonBase();
         _comboConfigWindow = new();
         _scriptComboWindow = new();
         windowSystem = new WindowSystem(Name);
